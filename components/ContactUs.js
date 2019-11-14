@@ -3,6 +3,25 @@ import './ContactUs.scss';
 const ContactUs = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
+        const data = {
+            name: e.target.name.value,
+            email: e.target.email.value,
+            message: e.target.message.value
+        };
+        console.log('data', data);
+        fetch("/api/contact", {
+            method: 'POST',
+            header: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        }).then((res) => {
+            if(res.status >= 400) {
+                throw new Error("Bad response from server");
+            }
+            return res.json();
+        }).then((json) => {
+            console.log('json', json);
+            document.contact.reset();
+        }).catch(err => console.error(err));
         alert('맹그는중');
     }
     
