@@ -15,7 +15,7 @@
     "@zeit/next-sass": "^1.0.1",
     "include-media": "^1.4.9",
     "next": "^9.1.2",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "smoothscroll-polyfill": "^0.4.4"
